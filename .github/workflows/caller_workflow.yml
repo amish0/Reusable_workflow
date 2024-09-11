@@ -15,6 +15,7 @@ jobs:
     
   reviews:
     needs: test
+    environment: Review
     uses: ./.github/workflows/called_workflow.yml
   # deploy:
   #   needs: reviews
