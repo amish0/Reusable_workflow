@@ -1,17 +1,17 @@
 name: Called Workflow
 on:
   workflow_call:
-  input:
-    workflow_id:
-      description: 'ID of the workflow to call'
-      required: true
-      default: 'multistage_workflow'
-      type: string
-    workflow_input:
-      description: 'Input for the called workflow'
-      required: true
-      default: 'Input for the called workflow'
-      type: string
+    inputs:
+      workflow_id:
+        description: 'ID of the workflow to call'
+        required: true
+        default: 'multistage_workflow'
+        type: string
+      workflow_input:
+        description: 'Input for the called workflow'
+        required: true
+        default: 'Input for the called workflow'
+        type: string
 jobs:
   build:
     runs-on: ubuntu-latest
