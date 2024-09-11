@@ -16,7 +16,6 @@ jobs:
   reviews:
     needs: test
     uses: ./.github/workflows/called_workflow.yml
-    environment: Staging
   # deploy:
   #   needs: reviews
   #   uses: ./.github/workflows/called_workflow.yml
