@@ -1,8 +1,7 @@
 Name: Called Workflow
 on:
   workflow_call:
-
-Jobs:
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:
