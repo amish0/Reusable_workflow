@@ -1,6 +1,15 @@
 name: Called Workflow
 on:
   workflow_call:
+  inputs:
+    workflow_id:
+      description: 'ID of the workflow to call'
+      required: true
+      default: 'multistage_workflow'
+    workflow_input:
+      description: 'Input for the called workflow'
+      required: true
+      default: 'Input for the called workflow'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -9,3 +18,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Run called workflow
         run: echo "Welcome to the called workflow"
+      - name: Echo
+        run: echo "Input for the called workflow is ${{ inputs.workflow_input }}"
+      - name: Echo
+        run: echo "Workflow ID is ${{ inputs.workflow_id }}"
