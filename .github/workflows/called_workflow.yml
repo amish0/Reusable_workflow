@@ -1,5 +1,5 @@
 Name: Called Workflow
-On:
+on:
   workflow_call:
 
 Jobs:
