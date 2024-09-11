@@ -15,7 +15,14 @@ jobs:
 
   reviews:
     needs: test
-    uses: ./.github/workflows/called_workflow.yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Reusable Workflow
+        uses: ./.github/workflows/called_workflow.yml
+        with:
+          # Pass any required inputs to the reusable workflow
+        secrets: inherit
+    # uses: ./.github/workflows/called_workflow.yml
     environment: Review  # Specify the environment here
 
   # deploy:
