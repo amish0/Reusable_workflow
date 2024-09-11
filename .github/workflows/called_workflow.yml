@@ -1,8 +1,6 @@
 name: Called Workflow
 on:
   workflow_call:
-    inputs:
-    secrets:
 jobs:
   build:
     runs-on: ubuntu-latest
