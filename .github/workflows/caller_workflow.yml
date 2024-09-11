@@ -16,7 +16,7 @@ jobs:
   reviews:
     needs: test
     runs-on: ubuntu-latest
-    uses: ./.github/workflows/called_workflow.yml
+    uses: ./.github\workflows\called_workflow.yml
     environment: Review
   # deploy:
   #   needs: reviews
