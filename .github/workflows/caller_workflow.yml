@@ -15,28 +15,27 @@ jobs:
     
   reviews:
     needs: test
-    environment: Staging
     uses: ./.github/workflows/called_workflow.yml
-  
-  deploy:
-    needs: reviews
     environment: Review
-    uses: ./.github/workflows/called_workflow.yml
+  # deploy:
+  #   needs: reviews
+  #   uses: ./.github/workflows/called_workflow.yml
+  #   environment: Staging
   
-  production:
-    needs: deploy
-    environment: Production
-    uses: ./.github/workflows/called_workflow.yml
+  # production:
+  #   needs: deploy
+  #   uses: ./.github/workflows/called_workflow.yml
+  #   environment: Production
   
-  Log:
-    needs: [test, reviews, deploy]
-    runs-on: ubuntu-latest
-    environment: Production
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Echo
-        run: echo "Welcome to the caller workflow In Log"
+  # Log:
+  #   needs: [test, reviews, deploy]
+  #   runs-on: ubuntu-latest
+  #   environment: Production
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+  #     - name: Echo
+        # run: echo "Welcome to the caller workflow In Log"
 
   
     
