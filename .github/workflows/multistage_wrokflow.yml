@@ -25,7 +25,7 @@ jobs:
       - name: Echo
         run: echo "Welcome to the caller workflow In reviews"
       - name: Echo
-        run: echo "User is ${{ envs.USER }}"
+        run: echo "User is ${{ env.USER }}"
   
   deploy:
     needs: reviews
