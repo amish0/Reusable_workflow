@@ -38,7 +38,9 @@ jobs:
         uses: ./.github/workflows/called_workflow.yml
   
   Log:
+    needs: [test, reviews, deploy]
     runs-on: ubuntu-latest
+    environment: Production
     steps:
       - name: Checkout
         uses: actions/checkout@v4
