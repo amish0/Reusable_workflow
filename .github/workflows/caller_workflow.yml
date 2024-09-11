@@ -21,7 +21,7 @@ jobs:
         uses: ./.github/workflows/called_workflow.yml
         with:
           # Pass any required inputs to the reusable workflow
-        secrets: inherit
+          secrets: inherit
     # uses: ./.github/workflows/called_workflow.yml
     environment: Review  # Specify the environment here
 
