@@ -16,17 +16,23 @@ jobs:
   reviews:
     needs: test
     environment: Staging
-    uses: ./.github/workflows/called_workflow.yml
+    steps:
+      - name: Using called workflow
+        uses: ./.github/workflows/called_workflow.yml
   
   deploy:
     needs: reviews
     environment: Review
-    uses: ./.github/workflows/called_workflow.yml
+    steps:
+      - name: Using called workflow
+        uses: ./.github/workflows/called_workflow.yml
   
   production:
     needs: deploy
     environment: Production
-    uses: ./.github/workflows/called_workflow.yml
+    steps:
+      - name: Using called workflow
+        uses: ./.github/workflows/called_workflow.yml
   
   Log:
     needs: [test, reviews, deploy]

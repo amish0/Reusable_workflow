@@ -9,4 +9,3 @@ jobs:
         uses: actions/checkout@v4
       - name: Run called workflow
         run: echo "Welcome to the called workflow"
-    
