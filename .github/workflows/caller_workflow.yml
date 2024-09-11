@@ -11,13 +11,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Echo
-        run: echo "Welcome to the caller workflow In test"
-    
+        run: echo "Welcome to the caller workflow in test"
+
   reviews:
     needs: test
-    runs-on: ubuntu-latest
-    uses: ./.github\workflows\called_workflow.yml
-    environment: Review
+    uses: ./.github/workflows/called_workflow.yml
+    environment: Review  # Specify the environment here
+
   # deploy:
   #   needs: reviews
   #   uses: ./.github/workflows/called_workflow.yml
