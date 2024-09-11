@@ -16,7 +16,13 @@ jobs:
   reviews:
     needs: test
     environment: Review
-    uses: ./.github/workflows/called_workflow.yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Echo
+        run: echo "Welcome to the caller workflow In reviews"
+      - uses: ./.github/workflows/called_workflow.yml
   # deploy:
   #   needs: reviews
   #   uses: ./.github/workflows/called_workflow.yml
