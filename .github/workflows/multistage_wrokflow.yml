@@ -16,12 +16,16 @@ jobs:
   reviews:
     needs: test
     environment: Staging
+    env:
+      USER: ${{ secrets.USER }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Echo
         run: echo "Welcome to the caller workflow In reviews"
+      - name: Echo
+        run: echo "User is $USER"
   
   deploy:
     needs: reviews
