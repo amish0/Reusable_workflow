@@ -18,24 +18,20 @@ jobs:
     environment: Staging
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Using the reusable workflow
         uses: ./.github/workflows/called_workflow.yml
   
   deploy:
     needs: reviews
     environment: Review
-    runs-on: ubuntu-latest
-    steps:
-      - name: Using the reusable workflow
-        uses: ./.github/workflows/called_workflow.yml
+    uses: ./.github/workflows/called_workflow.yml
   
   production:
     needs: deploy
     environment: Production
-    runs-on: ubuntu-latest
-    steps:
-      - name: Using the reusable workflow
-        uses: ./.github/workflows/called_workflow.yml
+    uses: ./.github/workflows/called_workflow.yml
   
   Log:
     needs: [test, reviews, deploy]
