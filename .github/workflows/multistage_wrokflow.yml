@@ -16,8 +16,6 @@ jobs:
   reviews:
     needs: test
     environment: Staging
-    env:
-      USER: ${{ secrets.USER }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
