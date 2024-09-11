@@ -18,14 +18,14 @@ jobs:
     environment: Staging
     runs-on: ubuntu-latest
     env:
-      USER: ${{ secrets.USER }}
+      USER: ${{ vars.USER }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Echo
         run: echo "Welcome to the caller workflow In reviews"
       - name: Echo
-        run: echo "User is ${{ env.USER }}"
+        run: echo "User is ${{ envs.USER }}"
   
   deploy:
     needs: reviews
@@ -36,6 +36,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Echo
         run: echo "Welcome to the caller workflow In deploy"
+      - name: Echo
+        run: echo "User is ${{ vars.USER }}"
   
   production:
     needs: deploy
