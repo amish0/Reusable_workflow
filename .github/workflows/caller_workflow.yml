@@ -15,10 +15,10 @@ jobs:
     
   reviews:
     needs: test
-    environment: Review
     runs-on: ubuntu-latest
     steps:
       - uses: ./.github/workflows/called_workflow.yml
+    environment: Review
   # deploy:
   #   needs: reviews
   #   uses: ./.github/workflows/called_workflow.yml
