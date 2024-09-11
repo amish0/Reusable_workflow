@@ -1,4 +1,4 @@
-name: Caller workflow For Reusable workflow example
+name: Multistage workflow
 on:
   workflow_dispatch:
 jobs:
