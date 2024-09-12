@@ -17,17 +17,17 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     environment: Review
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Echo
-        run: echo "Welcome to the caller workflow in reviews"
-      - name: file structure
-        run: ls -R
-      - uses: amish0/Reusable_workflow/.github/workflows/called_workflow@main
-        with:
-          workflow_id: multistage_workflow reviews
-          workflow_input: Input for the called workflow
+    # steps:
+    #   - name: Checkout
+    #     uses: actions/checkout@v4
+    #   - name: Echo
+    #     run: echo "Welcome to the caller workflow in reviews"
+    #   - name: file structure
+    #     run: ls -R
+    uses: amish0/Reusable_workflow/.github/workflows/called_workflow@main
+    with:
+      workflow_id: multistage_workflow reviews
+      workflow_input: Input for the called workflow
 
   deploy:
     needs: reviews
