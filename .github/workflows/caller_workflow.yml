@@ -16,7 +16,7 @@ jobs:
   reviews:
     needs: test
     # runs-on: ubuntu-latest
-    environment: Review
+    # environment: Review
     # steps:
     #   - name: Checkout
     #     uses: actions/checkout@v4
