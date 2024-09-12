@@ -19,7 +19,7 @@ jobs:
     with:
       workflow_id: multistage_workflow reviews
       workflow_input: Input for the called workflow
-    environment: Staging
+    # environment: Staging
 
   deploy:
     needs: reviews
@@ -27,6 +27,9 @@ jobs:
     with:
       workflow_id: multistage_workflow deploy
       workflow_input: Input for the called workflow
+    steps:
+      - name: receved output
+        run: echo "Output1 is ${{ needs.reviews.outputs.output1 }} and Output2 is ${{ needs.reviews.outputs.output2 }}"
   #   environment: Staging
   
   production:

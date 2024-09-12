@@ -15,6 +15,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.set_output.outputs.output1 }}
+      output2: ${{steps.set_output.outputs.output2}}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,3 +27,6 @@ jobs:
         run: echo "Input for the called workflow is ${{ inputs.workflow_input }}"
       - name: Echo
         run: echo "Workflow ID is ${{ inputs.workflow_id }}"
+      - name: Echo
+        id: set_output
+        run: echo "output1=${{ inputs.workflow_id }};output2=${{ inputs.workflow_input }}">> $GITHUB_OUTPUT
