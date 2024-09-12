@@ -15,11 +15,9 @@ on:
     outputs:
       output1:
         description: 'Output1'
-        type: string
         value: ${{ jobs.build.outputs.output1 }}
       output2:
         description: 'Output2'
-        type: string
         value: ${{ jobs.build.outputs.output2 }}
 jobs:
   build:
