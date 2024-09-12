@@ -14,12 +14,12 @@ jobs:
         run: echo "Welcome to the caller workflow in test"
 
   reviews:
-    environment: Staging
     needs: test
     uses: ./.github/workflows/called_workflow.yml
     with:
       workflow_id: multistage_workflow reviews
       workflow_input: Input for the called workflow
+    environment: Staging
 
   deploy:
     needs: reviews
