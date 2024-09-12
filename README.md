@@ -4,3 +4,5 @@ This repository contains reusable workflows that can be used in multiple reposit
 
 ## Workflows
 
+Reference:
+- https://docs.github.com/en/actions/sharing-automations/reusing-workflows#using-outputs-from-a-reusable-workflow
