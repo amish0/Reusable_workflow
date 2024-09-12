@@ -19,6 +19,7 @@ jobs:
     with:
       workflow_id: multistage_workflow reviews
       workflow_input: Input for the called workflow
+    environment: Staging
 
   deploy:
     needs: reviews
