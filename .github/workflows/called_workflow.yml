@@ -12,6 +12,15 @@ on:
         required: true
         default: 'Input for the called workflow'
         type: string
+    outputs:
+      output1:
+        description: 'Output1'
+        type: string
+        value: ${{ jobs.build.outputs.output1 }}
+      output2:
+        description: 'Output2'
+        type: string
+        value: ${{ jobs.build.outputs.output2 }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,7 +38,7 @@ jobs:
         run: echo "Workflow ID is ${{ inputs.workflow_id }}"
       - name: Echo
         id: set_output
-        run: echo "output1=Sucess1" >> $GITHUB_OUTPUT
+        run: echo "output1=${{ inputs.workflow_input }}" >> $GITHUB_OUTPUT
       - name: Echo
         id: set_output2
-        run: echo "output2=Sucess2" >> $GITHUB_OUTPUT
+        run: echo "output2=${{ inputs.workflow_id }}" >> $GITHUB_OUTPUT
