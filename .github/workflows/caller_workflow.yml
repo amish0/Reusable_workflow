@@ -24,7 +24,7 @@ jobs:
     #     run: echo "Welcome to the caller workflow in reviews"
     #   - name: file structure
     #     run: ls -R
-    uses: amish0/Reusable_workflow/.github/workflows/called_workflow@main
+    uses: amish0/Reusable_workflow/.github/workflows/called_workflow.yml@main
     with:
       workflow_id: multistage_workflow reviews
       workflow_input: Input for the called workflow
