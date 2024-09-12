@@ -46,8 +46,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Echo
         run: echo "Welcome to the caller workflow In Log"
-      - name: receved output
-        run: echo "Output1 is ${{ needs.reviews.outputs.output1 }} and Output2 is ${{ needs.reviews.outputs.output2 }}"
  
 
   Log_reviews:
@@ -59,6 +57,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Echo
         run: echo "Welcome to the caller workflow In Log"
+      - name: receved output
+        run: echo "Output1 is ${{ needs.reviews.outputs.output1 }} and Output2 is ${{ needs.reviews.outputs.output2 }}"
 
   Log:
     needs: [test, reviews, deploy]
