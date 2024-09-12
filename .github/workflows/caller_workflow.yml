@@ -49,7 +49,7 @@ jobs:
  
 
   Log_reviews:
-    needs: [test, reviews]
+    needs: reviews
     runs-on: ubuntu-latest
     environment: Staging
     steps:
